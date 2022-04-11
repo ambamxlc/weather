@@ -19,7 +19,7 @@ let weather = {
     const { temp } = data.main;
     const { temp_max } = data.main;
     const { temp_min } = data.main;
-    const { timezone } = new Date();
+    const timezone = new Date();
     console.log(name, icon, description, temp_max, temp_min, timezone);
     document.querySelector(".city").innerText = "Weather in " + name;
     document.querySelector(".icon").src =
@@ -28,10 +28,9 @@ let weather = {
     document.querySelector(".temp").innerText = temp + "°F";
     document.querySelector(".temp_max").innerText = "High " + temp_max;
     document.querySelector(".temp_min").innerText = "Low " + temp_min;
-    document.querySelector(".date").innerText = date;
+    document.querySelector(".date").innerText = timezone;
   },
 };
-
 document.querySelector(".button").addEventListener("click", function () {
   weather.searchFunction();
 });
